@@ -6,21 +6,21 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    [SerializeField] protected AnimationCurve priceCurve;
-    protected int currentPrice;
-    protected int amountGiven;
-    protected int currentBuy;
-    [SerializeField] protected int maxBuy = 10;
+    [SerializeField] public AnimationCurve priceCurve;
+    public int currentPrice;
+    public int amountGiven;
+    public int currentBuy;
+    [SerializeField] public int maxBuy = 10;
 
-    protected bool closed;
+    public bool closed;
 
-    [SerializeField]protected TextMeshProUGUI counter;
+    [SerializeField] public TextMeshProUGUI counter;
 
     public ERessourceType ressourceToUse;
 
     private void Start()
     {
-        currentPrice = Mathf.RoundToInt(priceCurve.Evaluate(currentBuy));
+        currentPrice = Mathf.RoundToInt(priceCurve.Evaluate(currentBuy/maxBuy-1));
         counter.text = amountGiven + " / " + currentPrice;
     }
 
@@ -41,21 +41,26 @@ public class Shop : MonoBehaviour
 
     protected virtual void Buy()
     {
+
+        currentBuy++;
         
-        getNextPrice();
         amountGiven = 0;
-        counter.text = amountGiven + " / " + currentPrice;
-        if (currentBuy > maxBuy)
+        if (currentBuy >= maxBuy)
         {
             counter.text = "Sold Out";
             closed = true;
+        }
+        else
+        {
+            currentPrice = Mathf.RoundToInt(priceCurve.Evaluate((currentBuy+1) / (maxBuy)));
+            counter.text = amountGiven + " / " + currentPrice;
         }
     }
 
     private void getNextPrice()
     {
-        currentBuy++;
-        currentPrice = Mathf.RoundToInt(priceCurve.Evaluate(currentBuy));
+        
+        
     }
 
 

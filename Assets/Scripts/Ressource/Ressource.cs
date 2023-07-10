@@ -16,7 +16,7 @@ public class Ressource : MonoBehaviour
     [SerializeField] private bool infiniteRessource = false;
     [SerializeField] public float startLifePoint = 5;
     public float lifePoint = 5;
-    [SerializeField] private int RessourceOnBreak = 5;
+    [SerializeField] public int RessourceOnBreak = 5;
     [SerializeField] private ParticleSystem ps;
 
     [SerializeField] private Transform mesh;

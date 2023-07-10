@@ -20,7 +20,7 @@ using UnityEngine.UI;
             image.DOFade(1, 0);
             imageFillAmount.DOFade(1, 0);
             imageFillAmount.DOFillAmount(ressource.lifePoint / ressource.startLifePoint, 0.1f);
-            Debug.Log(ressource.lifePoint +" | "+ ressource.startLifePoint);
+            
             image.DOFade(0, 5).SetEase(Ease.InOutExpo);
             imageFillAmount.DOFade(0, 5).SetEase(Ease.InOutExpo);
         }

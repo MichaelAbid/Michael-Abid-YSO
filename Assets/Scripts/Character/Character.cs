@@ -144,8 +144,11 @@ public class Character : MonoBehaviour
     public void Chop(string s)
     {
         nearRessources.Sort(SortByDistance);
-        Ressource nearestRessource = nearRessources[0];
-        nearestRessource.RetrieveRessources(this);
+        if (nearRessources.Count > 0)
+        {
+            Ressource nearestRessource = nearRessources[0];
+            nearestRessource.RetrieveRessources(this);
+        }
     }
 
 }

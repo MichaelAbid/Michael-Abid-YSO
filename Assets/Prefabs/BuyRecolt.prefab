@@ -24,7 +24,37 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99000988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.163, y: 0.78, z: 1.113}
+  m_LocalPosition: {x: -4.163, y: 0, z: 1.113}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8500450834714234931}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &320264002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 320264003}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &320264003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320264002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.766, y: 0, z: 2.319}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8500450834714234931}
@@ -118,6 +148,7 @@ GameObject:
   - component: {fileID: 8690359781749831386}
   - component: {fileID: 1944816047}
   - component: {fileID: 1944816046}
+  - component: {fileID: 611812015}
   m_Layer: 0
   m_Name: BuyRecolt
   m_TagString: Untagged
@@ -139,6 +170,7 @@ Transform:
   - {fileID: 866987488985740934}
   - {fileID: 8618055683828816078}
   - {fileID: 5068756128941937710}
+  - {fileID: 320264003}
   - {fileID: 99000989}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -187,17 +219,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 10
-      inSlope: 4
-      outSlope: 4
+      inSlope: 5
+      outSlope: 5
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 10
-      value: 50
-      inSlope: 4
-      outSlope: 4
+      time: 1
+      value: 15
+      inSlope: 5
+      outSlope: 5
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -205,11 +237,28 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  currentPrice: 0
+  amountGiven: 0
+  currentBuy: 0
   maxBuy: 2
+  closed: 0
   counter: {fileID: 1177887910879772848}
   ressourceToUse: 0
   RefToSpawn: {fileID: 1663412020829166068, guid: 39c0a8b6ac36ce74c86a1e4b58ce00e2, type: 3}
   positionToSpawn: {fileID: 99000989}
+--- !u!65 &611812015
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614778103773678824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6893139, y: 1.4745934, z: 3.5008779}
+  m_Center: {x: 0.126441, y: 0.7336725, z: 0.6444347}
 --- !u!1 &5774932448799796289
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,17 +776,17 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5866666021909216657, guid: 6b819e0884c6cab4b9ac0a73e6215762, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6b819e0884c6cab4b9ac0a73e6215762, type: 3}
---- !u!1 &8994439797902099060 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6b819e0884c6cab4b9ac0a73e6215762, type: 3}
-  m_PrefabInstance: {fileID: 8076012440130322213}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8618055683828816078 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6b819e0884c6cab4b9ac0a73e6215762, type: 3}
   m_PrefabInstance: {fileID: 8076012440130322213}
   m_PrefabAsset: {fileID: 0}
---- !u!111 &1944816048
+--- !u!1 &8994439797902099060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6b819e0884c6cab4b9ac0a73e6215762, type: 3}
+  m_PrefabInstance: {fileID: 8076012440130322213}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &1898810363
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

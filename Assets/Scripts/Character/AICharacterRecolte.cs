@@ -16,10 +16,14 @@ public class AICharacterRecolte : AICharacter
         {
             foreach (Ressource item in list)
             {
-                NavMeshPath navMeshPath = new NavMeshPath();
-                if (agent.CalculatePath(item.transform.position, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+                NavMeshHit myNavHit;
+                if (NavMesh.SamplePosition(item.transform.position, out myNavHit, 100, -1))
                 {
-                    return item;
+                    NavMeshPath navMeshPath = new NavMeshPath();
+                    if (agent.CalculatePath(myNavHit.position, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+                    {
+                        return item;
+                    }
                 }
             }
         }
